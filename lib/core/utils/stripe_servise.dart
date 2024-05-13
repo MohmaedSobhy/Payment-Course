@@ -30,7 +30,7 @@ abstract class StripeServies {
       PaymentIntentInputModel paymentInput) async {
     var response = await DioHelper.postData(
       url: 'https://api.stripe.com/v1/payment_intents',
-      token: ApiKeys.secretKey,
+      token: ApiKeys.stripeSecretKey,
       body: paymentInput.toJson(),
     );
     return PaymentIntentModel.fromJson(response.data);

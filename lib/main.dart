@@ -9,6 +9,6 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   DioHelper.init();
-  Stripe.publishableKey = ApiKeys.publishableKey;
+  Stripe.publishableKey = ApiKeys.stripePublishableKey;
   runApp(const PaymentApp());
 }

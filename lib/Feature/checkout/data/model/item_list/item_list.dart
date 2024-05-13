@@ -1,15 +1,11 @@
+import 'package:flutter_stripe_payment/Feature/checkout/data/model/item_list/item.dart';
+
 class ItemListModel {
-  ItemListModel? itemList;
+  List<OrderItemModel> orders;
 
-  ItemListModel({this.itemList});
-
-  factory ItemListModel.fromJson(Map<String, dynamic> json) => ItemListModel(
-        itemList: json['item_list'] == null
-            ? null
-            : ItemListModel.fromJson(json['item_list'] as Map<String, dynamic>),
-      );
+  ItemListModel({required this.orders});
 
   Map<String, dynamic> toJson() => {
-        'item_list': itemList?.toJson(),
+        'items': orders.map((e) => e.toJson()).toList(),
       };
 }
